@@ -1,0 +1,165 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    background: #f3e8ff;
+    font-family: 'Poppins', sans-serif;
+    color: #424242;
+}
+
+.todo-container {
+    max-width: 600px; /* Adjust the width as needed */
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px; /* Optional: adds rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a shadow */
+    background-color: #fde2e4; /* Ensures the container stands out with a white background */
+}
+
+.input-btn-container {
+    position: relative;
+    max-width: 500px; /* Increase the max-width as needed */
+    margin: 0 auto;
+}
+
+#task-input {
+    width: calc(100% - 45px);
+    padding: 10px; /* Make space for the button */
+    margin: 0;
+    border: 2px solid #a2d2ff;
+    border-radius: 4px;
+    box-sizing: border-box; /* Include padding in the width calculation */
+}
+
+#task-input, .input-btn-container, li {
+    border-radius: 20px;
+}
+
+#task-list li {
+    position: relative;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #fff; /* Example background color */
+    list-style-type: none; /* Removes default list bullet */
+    border-radius: 5px; /* Optional: adds rounded corners */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional: adds a subtle shadow */
+}
+
+.input-btn-container {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#add-task-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    border: none;
+    background-color: #a2d2ff;
+    border-radius: 4px;
+    color: #fff;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.delete-task-btn {
+    color: #f3a4b5; /* Soft pink for delete icon */
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 5px; /* Adjust as needed */
+    right: 5px; /* Adjust as needed */
+    border: none;
+    cursor: pointer;
+    font-size: 16px; /* Adjust as needed */
+}
+
+.delete-task-btn:hover {
+    color: #d9534f; /* Slightly darker shade for hover state */
+}
+
+li {
+    background-color: #ffffff;
+    list-style-type: none;
+    margin-top: 5px;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+}
+
+li:hover {
+    transform: scale(1.02);
+    background-color: #fde2e4;
+}
+
+.filters {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.filter-btn {
+    padding: 5px 10px;
+    background-color: #f3e8ff; /* Adjust to fit your color scheme */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.filter-btn:hover {
+    background-color: #e7e7e7; /* Slightly darker shade for hover effect */
+}
+
+.pending {
+    background: linear-gradient(to right, #fde2e4, #fef6fb);
+}
+
+#completed-tasks {
+    margin-top: 20px;
+}
+
+.toggle-status-btn {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.toggle-status-btn i.fas.fa-check {
+    color: green;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-20px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fadeOut {
+    to { opacity: 0; transform: scale(0.95); }
+}
+
+li {
+    animation: slideIn 0.3s ease-out;
+}
+
+.task-deleting {
+    animation: fadeOut 0.3s forwards;
+}
+
+@media (max-width: 768px) {
+    .input-btn-container {
+        flex-direction: column;
+    }
+
+    #add-task-btn {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
